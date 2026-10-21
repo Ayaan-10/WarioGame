@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bi4cmxjc1wgqh"]
+
+[ext_resource type="Script" uid="uid://cqgmcbcvbkhcw" path="res://scenes/title_screen.gd" id="1_e54dn"]
+[ext_resource type="Texture2D" uid="uid://buub3vu8iaqhu" path="res://WarioWare The Warrior(7).png" id="2_s4lrb"]
+[ext_resource type="FontFile" uid="uid://ca0teuppud505" path="res://CabinSketch-Regular.ttf" id="3_mgrm8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e24u"]
+bg_color = Color(0.17641908, 0.17641911, 0.17641899, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_color = Color(0.07450981, 0.07058824, 0.07058824, 0.4862745)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgrm8"]
+bg_color = Color(0.31061733, 0.31061703, 0.31061718, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_color = Color(0.07450981, 0.07058824, 0.07058824, 0.4862745)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4lrb"]
+bg_color = Color(0.23392558, 0.2339254, 0.23392543, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_color = Color(0.07450981, 0.07058824, 0.07058824, 0.4862745)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.5)
+
+[node name="TitleScreen" type="Node2D" unique_id=980110372]
+script = ExtResource("1_e54dn")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=2024000262]
+offset_top = 3.0
+offset_right = 1366.0
+offset_bottom = 771.0
+scale = Vector2(0.8429304, 0.8429304)
+texture = ExtResource("2_s4lrb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackGround" unique_id=493902796]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47345015
+anchor_top = 0.47950292
+anchor_right = 0.47345015
+anchor_bottom = 0.47950292
+offset_left = -125.930725
+offset_top = -121.5
+offset_right = 125.930725
+offset_bottom = 121.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.347346, 1.347346)
+theme_override_constants/separation = 15
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="BackGround/VBoxContainer" unique_id=1153999348]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_mgrm8")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3e24u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mgrm8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4lrb")
+text = "Play"
+
+[node name="Settings" type="Button" parent="BackGround/VBoxContainer" unique_id=128324215]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_mgrm8")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3e24u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mgrm8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4lrb")
+text = "Settings
+"
+
+[node name="Exit" type="Button" parent="BackGround/VBoxContainer" unique_id=1037612296]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_mgrm8")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_3e24u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mgrm8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s4lrb")
+text = "Exit"
+
+[connection signal="pressed" from="BackGround/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="BackGround/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
